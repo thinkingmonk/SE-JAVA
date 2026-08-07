@@ -1,0 +1,1 @@
+1. Data Types vs Variables: The core difference is that a variable is a named storage container used to hold information in computer memory, while a data type is the blueprint or classification that determines exactly what kind of information that container can hold.
