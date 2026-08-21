@@ -9,5 +9,6 @@ public class Main {
         Dog d = new Dog("Bruno", "Labrador");
         d.eat();
         d.bark();
+        System.out.println("Dog's info: " + d);
     }
 }
