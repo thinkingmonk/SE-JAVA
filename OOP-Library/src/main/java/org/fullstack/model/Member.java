@@ -1,5 +1,7 @@
 package org.fullstack.model;
 
+import org.fullstack.constant.LibraryConstants;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +23,7 @@ public class Member {
     private final List<Book> borrowedBooks;
 
     public Member(int id, String name) {
-        this(id, name, 3); // constructor chaining via this(...)
+        this(id, name, LibraryConstants.DEFAULT_MAX_BOOKS_PER_MEMBER);
     }
 
     public Member(int id, String name, int maxBooks) {

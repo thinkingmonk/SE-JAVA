@@ -1,4 +1,4 @@
-package org.fullstack;
+package org.fullstack.service;
 
 import org.fullstack.borrowable.Borrowable;
 import org.fullstack.model.Book;
@@ -11,33 +11,25 @@ import java.util.Optional;
 /**
  * OOP CONCEPT: COMPOSITION + POLYMORPHISM
  * ---------------------------------------
- * COMPOSITION — Library HAS-A catalog of books and a list of members.
- *   Library ──has──> List<Book>
- *   Library ──has──> List<Member>
+ * COMPOSITION — LibraryService HAS-A catalog of books and a list of members.
+ * POLYMORPHISM — borrow/return work through Borrowable references, not concrete types.
  *
- * POLYMORPHISM — methods accept/loop over Borrowable references.
- *   Borrowable item = book;   // a Book IS-A Borrowable
- *   item.borrow(member);      // correct overridden method runs at runtime
- *
- * This class is the "service layer": it coordinates Book and Member objects.
+ * This service layer coordinates Book and Member objects; it has no console I/O.
  */
-public class Library {
+public class LibraryService {
 
-    // Composition: the library owns its catalog (books stay inside this list).
     private final List<Book> catalog;
     private final List<Member> members;
 
-    public Library() {
+    public LibraryService() {
         this.catalog = new ArrayList<>();
         this.members = new ArrayList<>();
     }
 
-    /** Add a new book object to the catalog. */
     public void addBook(Book book) {
         catalog.add(book);
     }
 
-    /** Register a member. Returns false if ID already exists. */
     public boolean registerMember(Member member) {
         for (Member existing : members) {
             if (existing.getId() == member.getId()) {
@@ -48,10 +40,6 @@ public class Library {
         return true;
     }
 
-    /**
-     * OOP: POLYMORPHISM in action.
-     * We find a Book, but the borrow logic lives on the Borrowable interface contract.
-     */
     public boolean borrowBook(int memberId, String isbn) {
         Optional<Member> memberOpt = findMemberById(memberId);
         Optional<Book> bookOpt = findBookByIsbn(isbn);
@@ -64,7 +52,7 @@ public class Library {
         }
 
         Member member = memberOpt.get();
-        Borrowable item = bookOpt.get(); // upcasting: Book → Borrowable
+        Borrowable item = bookOpt.get();
 
         return item.borrow(member);
     }
@@ -77,7 +65,7 @@ public class Library {
 
         Borrowable item = bookOpt.get();
         if (item.isAvailable()) {
-            return false; // nothing to return
+            return false;
         }
 
         item.returnItem();
@@ -118,15 +106,5 @@ public class Library {
             }
         }
         return Optional.empty();
-    }
-
-    /** Demo helper — pre-loads sample data so Main is shorter. */
-    public void seedSampleData() {
-        addBook(new Book("Java Basics", "ISBN-001"));
-        addBook(new Book("OOP in Java", "ISBN-002"));
-        addBook(new Book("Data Structures", "ISBN-003"));
-
-        registerMember(new Member(101, "Riya"));
-        registerMember(new Member(102, "Aman"));
     }
 }

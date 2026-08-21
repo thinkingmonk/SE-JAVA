@@ -8,9 +8,19 @@ public class Main {
         Calculator calculator = new Calculator();
 
         System.out.print("First number: ");
+        if (!sc.hasNextDouble()) {
+            System.out.println("Error: Please enter a valid number.");
+            sc.close();
+            return;
+        }
         double a = sc.nextDouble();
 
         System.out.print("Second number: ");
+        if (!sc.hasNextDouble()) {
+            System.out.println("Error: Please enter a valid number.");
+            sc.close();
+            return;
+        }
         double b = sc.nextDouble();
 
         System.out.print("Operator (+, -, *, /): ");
