@@ -4,11 +4,12 @@ package org.java;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
+
         Dog d = new Dog("Bruno", "Labrador");
+//        Dog d = new Dog("Bruno", "Labrador", "Brown");
         d.eat();
         d.bark();
+//        d.findColor();
         System.out.println("Dog's info: " + d);
     }
 }
