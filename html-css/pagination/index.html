@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club directory — pagination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top">
+        <a class="back" href="../index.html">← Labs</a>
+        <p class="kicker">CSS-only pagination</p>
+        <h1>Campus clubs</h1>
+        <p>Hidden radios pick the “page”. Labels are the 1 · 2 · 3 buttons you tap.</p>
+    </header>
+
+    <!-- One radio group = one pagination state -->
+    <input type="radio" name="page" id="page-1" checked>
+    <input type="radio" name="page" id="page-2">
+    <input type="radio" name="page" id="page-3">
+
+    <main class="catalog">
+        <section class="page page-1">
+            <article class="club">
+                <img src="https://picsum.photos/id/1015/640/400" alt="Hiking trail">
+                <h2>Trailblazers</h2>
+                <p>Weekend treks · 84 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/1025/640/400" alt="Dog mascot">
+                <h2>Pet society</h2>
+                <p>Campus pets · 41 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/180/640/400" alt="Laptop on desk">
+                <h2>Hack club</h2>
+                <p>Friday builds · 120 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/1011/640/400" alt="Canoe on water">
+                <h2>Rowing</h2>
+                <p>Dawn practice · 28 members</p>
+            </article>
+        </section>
+
+        <section class="page page-2">
+            <article class="club">
+                <img src="https://picsum.photos/id/1016/640/400" alt="Valley">
+                <h2>Photo circle</h2>
+                <p>Golden hour · 67 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/292/640/400" alt="Lemons">
+                <h2>Campus café</h2>
+                <p>Bake sales · 33 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/1060/640/400" alt="Coffee">
+                <h2>Debate union</h2>
+                <p>Tuesday nights · 52 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/1080/640/400" alt="Strawberries">
+                <h2>Farmers’ market</h2>
+                <p>Sunday stall · 19 members</p>
+            </article>
+        </section>
+
+        <section class="page page-3">
+            <article class="club">
+                <img src="https://picsum.photos/id/1036/640/400" alt="Stage lights">
+                <h2>Drama soc</h2>
+                <p>Spring play · 46 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/1040/640/400" alt="Concert">
+                <h2>Indie night</h2>
+                <p>Open mic · 90 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/1050/640/400" alt="Sunset pier">
+                <h2>Film club</h2>
+                <p>Thursday screenings · 71 members</p>
+            </article>
+            <article class="club">
+                <img src="https://picsum.photos/id/106/640/400" alt="Jellyfish">
+                <h2>Marine bio</h2>
+                <p>Field trips · 22 members</p>
+            </article>
+        </section>
+    </main>
+
+    <nav class="pager" aria-label="Pages">
+        <label class="arrow prev" for="page-1">‹</label>
+        <label class="arrow prev" for="page-2">‹</label>
+        <label class="dot" for="page-1">1</label>
+        <label class="dot" for="page-2">2</label>
+        <label class="dot" for="page-3">3</label>
+        <label class="arrow next" for="page-2">›</label>
+        <label class="arrow next" for="page-3">›</label>
+    </nav>
+</body>
+</html>

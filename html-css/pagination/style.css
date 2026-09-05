@@ -1,0 +1,117 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg: #f6f1e8;
+    --ink: #1c1917;
+    --muted: #78716c;
+    --card: #fffaf3;
+    --line: #e7e0d4;
+    --accent: #c2410c;
+}
+
+body {
+    margin: 0;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+input[name="page"] { display: none; }
+
+.top {
+    width: min(920px, 92%);
+    margin: 0 auto;
+    padding: 40px 0 12px;
+}
+
+.back {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.kicker {
+    font-family: system-ui, sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 4px 0; font-weight: 600; }
+.top p { color: var(--muted); max-width: 46ch; }
+
+.catalog { width: min(920px, 92%); margin: 0 auto 24px; }
+
+.page {
+    display: none;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.page-1 { display: none; }
+#page-1:checked ~ .catalog .page-1,
+#page-2:checked ~ .catalog .page-2,
+#page-3:checked ~ .catalog .page-3 {
+    display: flex;
+}
+
+.club {
+    flex: 1 1 200px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.club img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.club h2, .club p { margin: 0; padding: 0 14px; }
+.club h2 { padding-top: 12px; font-size: 1.15rem; }
+.club p { padding-bottom: 16px; color: var(--muted); font-size: 0.92rem; }
+
+.pager {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0 56px;
+    font-family: system-ui, sans-serif;
+}
+
+.pager label {
+    min-width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--card);
+    cursor: pointer;
+    user-select: none;
+}
+
+.pager label:hover { border-color: var(--accent); color: var(--accent); }
+
+.pager .arrow { display: none; }
+
+#page-1:checked ~ .pager .next[for="page-2"],
+#page-2:checked ~ .pager .prev[for="page-1"],
+#page-2:checked ~ .pager .next[for="page-3"],
+#page-3:checked ~ .pager .prev[for="page-2"] {
+    display: grid;
+}
+
+#page-1:checked ~ .pager .dot[for="page-1"],
+#page-2:checked ~ .pager .dot[for="page-2"],
+#page-3:checked ~ .pager .dot[for="page-3"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+}

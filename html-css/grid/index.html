@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus dashboard — CSS Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top">
+        <a class="back" href="../index.html">← Labs</a>
+        <p class="kicker">CSS Grid layout</p>
+        <h1>Campus dashboard</h1>
+        <p>Two-dimensional layout: rows <em>and</em> columns. Resize the window — cards reflow with <code>auto-fit</code> and <code>minmax()</code>.</p>
+    </header>
+
+    <main class="dashboard">
+        <section class="panel panel--hero" aria-labelledby="hero-title">
+            <p class="eyebrow">Today · Block A</p>
+            <h2 id="hero-title">Data structures lab</h2>
+            <p>Room 204 · 10:00–12:00 · Prof. Mehta</p>
+            <a class="cta" href="#">Open timetable</a>
+        </section>
+
+        <section class="panel panel--stat">
+            <p class="label">Attendance</p>
+            <p class="value">92%</p>
+            <p class="hint">This semester</p>
+        </section>
+
+        <section class="panel panel--stat">
+            <p class="label">Assignments due</p>
+            <p class="value">3</p>
+            <p class="hint">Next: Friday</p>
+        </section>
+
+        <section class="panel panel--wide">
+            <h2>Upcoming events</h2>
+            <ul class="events">
+                <li><time datetime="2026-09-08">Mon 8</time> Hack night · 6 pm</li>
+                <li><time datetime="2026-09-10">Wed 10</time> Sports trials</li>
+                <li><time datetime="2026-09-12">Fri 12</time> Guest lecture — AI ethics</li>
+            </ul>
+        </section>
+
+        <article class="panel card">
+            <img src="https://picsum.photos/id/180/640/400" alt="Laptop on desk">
+            <h3>Hack club</h3>
+            <p>Friday builds · 120 members</p>
+        </article>
+
+        <article class="panel card">
+            <img src="https://picsum.photos/id/1011/640/400" alt="Canoe on water">
+            <h3>Rowing</h3>
+            <p>Dawn practice · 28 members</p>
+        </article>
+
+        <article class="panel card">
+            <img src="https://picsum.photos/id/1036/640/400" alt="Stage lights">
+            <h3>Drama soc</h3>
+            <p>Spring play auditions</p>
+        </article>
+
+        <article class="panel card">
+            <img src="https://picsum.photos/id/1025/640/400" alt="Campus dog">
+            <h3>Pet society</h3>
+            <p>Sunday walk · 41 members</p>
+        </article>
+    </main>
+</body>
+</html>

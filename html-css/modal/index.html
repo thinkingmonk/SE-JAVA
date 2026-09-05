@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fest pass — modal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="back" href="../index.html">← Labs</a>
+
+    <main class="stage">
+        <p class="kicker">Aether Fest ’26</p>
+        <h1>Get your campus pass</h1>
+        <p class="lede">Three stages, 40 artists, one wristband. The popup is a real overlay — CSS <code>:target</code> only.</p>
+        <a class="cta" href="#pass-modal">Grab a pass</a>
+    </main>
+
+    <!-- :target opens this when the URL ends with #pass-modal -->
+    <div id="pass-modal" class="modal" role="dialog" aria-labelledby="modal-title">
+        <a class="backdrop" href="#" aria-label="Close modal"></a>
+        <article class="sheet">
+            <a class="close" href="#" aria-label="Close">×</a>
+            <p class="kicker">Student pass</p>
+            <h2 id="modal-title">₹499 · two-day access</h2>
+            <ul>
+                <li>Main stage + indie tent</li>
+                <li>Food court tokens included</li>
+                <li>Valid on college ID</li>
+            </ul>
+            <form class="pass-form" action="#pass-modal" method="get">
+                <label for="email">College email</label>
+                <input id="email" name="email" type="email" placeholder="riya@tcet.edu" required>
+                <button type="submit">Continue to pay</button>
+            </form>
+            <p class="fine">Demo form — submit stays on this page.</p>
+        </article>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus highlights — carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="back" href="../index.html">← Labs</a>
+    <p class="kicker">CSS-only carousel</p>
+    <h1>This week on campus</h1>
+
+    <input type="radio" name="slide" id="s1" checked>
+    <input type="radio" name="slide" id="s2">
+    <input type="radio" name="slide" id="s3">
+    <input type="radio" name="slide" id="s4">
+
+    <div class="carousel">
+        <div class="viewport">
+            <ul class="track">
+                <li class="slide">
+                    <img src="https://picsum.photos/id/1015/1400/800" alt="Mountain trail above campus">
+                    <div class="caption">
+                        <p>01 · Outdoors</p>
+                        <h2>Sunrise trek sold out in 12 minutes</h2>
+                    </div>
+                </li>
+                <li class="slide">
+                    <img src="https://picsum.photos/id/1036/1400/800" alt="Concert lights">
+                    <div class="caption">
+                        <p>02 · Culture</p>
+                        <h2>Aether Fest headliners drop Friday</h2>
+                    </div>
+                </li>
+                <li class="slide">
+                    <img src="https://picsum.photos/id/180/1400/800" alt="Workspace">
+                    <div class="caption">
+                        <p>03 · Build</p>
+                        <h2>Hack night: ship a UI kit before 2am</h2>
+                    </div>
+                </li>
+                <li class="slide">
+                    <img src="https://picsum.photos/id/1040/1400/800" alt="Crowd at a show">
+                    <div class="caption">
+                        <p>04 · Night</p>
+                        <h2>Open mic at the amphitheatre</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="controls">
+            <label class="arrow prev" for="s4">‹</label>
+            <label class="arrow prev" for="s1">‹</label>
+            <label class="arrow prev" for="s2">‹</label>
+            <label class="arrow prev" for="s3">‹</label>
+
+            <div class="dots">
+                <label for="s1"></label>
+                <label for="s2"></label>
+                <label for="s3"></label>
+                <label for="s4"></label>
+            </div>
+
+            <label class="arrow next" for="s2">›</label>
+            <label class="arrow next" for="s3">›</label>
+            <label class="arrow next" for="s4">›</label>
+            <label class="arrow next" for="s1">›</label>
+        </div>
+    </div>
+</body>
+</html>

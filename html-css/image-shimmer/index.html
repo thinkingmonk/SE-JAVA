@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facade + shimmer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">← Labs</a>
+        <p class="kicker">Skeleton → photo</p>
+        <h1>Story dump</h1>
+        <p>Each tile starts as a facade (grey block + moving shimmer). After a short delay the real image fades in — the same trick feed apps use while bytes download.</p>
+    </header>
+
+    <main class="feed">
+        <article class="tile delay-a">
+            <div class="media">
+                <div class="facade" aria-hidden="true"></div>
+                <img src="https://picsum.photos/id/1011/800/1000" alt="Canoe on a lake">
+            </div>
+            <h2>Dawn paddle</h2>
+            <p>@rowers</p>
+        </article>
+        <article class="tile delay-b">
+            <div class="media">
+                <div class="facade" aria-hidden="true"></div>
+                <img src="https://picsum.photos/id/1015/800/1000" alt="Foggy mountains">
+            </div>
+            <h2>Monsoon ridge</h2>
+            <p>@trailblazers</p>
+        </article>
+        <article class="tile delay-c">
+            <div class="media">
+                <div class="facade" aria-hidden="true"></div>
+                <img src="https://picsum.photos/id/1036/800/1000" alt="Concert lights">
+            </div>
+            <h2>Soundcheck</h2>
+            <p>@aetherfest</p>
+        </article>
+        <article class="tile delay-d">
+            <div class="media">
+                <div class="facade" aria-hidden="true"></div>
+                <img src="https://picsum.photos/id/1025/800/1000" alt="Sleepy dog">
+            </div>
+            <h2>Campus celebrity</h2>
+            <p>@petsoc</p>
+        </article>
+        <article class="tile delay-e">
+            <div class="media">
+                <div class="facade" aria-hidden="true"></div>
+                <img src="https://picsum.photos/id/180/800/1000" alt="Desk with laptop">
+            </div>
+            <h2>Lab at 1am</h2>
+            <p>@hackclub</p>
+        </article>
+        <article class="tile delay-f">
+            <div class="media">
+                <div class="facade" aria-hidden="true"></div>
+                <img src="https://picsum.photos/id/1060/800/1000" alt="Coffee pour">
+            </div>
+            <h2>Canteen pour</h2>
+            <p>@nightmenu</p>
+        </article>
+    </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <div class="site-header__text">
+                <p class="kicker">HTML · CSS · JavaScript</p>
+                <h1>SE student card</h1>
+            </div>
+            <button type="button" id="themeBtn" class="btn btn--ghost">Toggle theme</button>
+        </div>
+    </header>
+
+    <main class="container layout">
+        <article class="card card--profile" aria-live="polite">
+            <p class="card__eyebrow">Live preview</p>
+            <div class="profile__avatar" aria-hidden="true">
+                <span id="displayInitials">—</span>
+            </div>
+            <h2 class="profile__name" id="displayName">Student name</h2>
+            <dl class="profile__meta">
+                <div class="profile__row">
+                    <dt>Roll number</dt>
+                    <dd id="displayRoll">—</dd>
+                </div>
+                <div class="profile__row">
+                    <dt>Result</dt>
+                    <dd id="result" class="result result--empty">Not graded yet</dd>
+                </div>
+            </dl>
+        </article>
+
+        <form id="cardForm" class="card card--form">
+            <p class="card__eyebrow">Update profile</p>
+            <h2 class="card__title">Enter details</h2>
+
+            <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="e.g. Priya Sharma" required>
+            </div>
+
+            <div class="field">
+                <label for="roll">Roll number</label>
+                <input id="roll" name="roll" type="number" placeholder="e.g. 42" required min="1">
+            </div>
+
+            <div class="field">
+                <label for="marks">Marks (out of 100)</label>
+                <input id="marks" name="marks" type="number" placeholder="0 – 100" required min="0" max="100">
+            </div>
+
+            <button type="submit" class="btn btn--primary">Update card</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

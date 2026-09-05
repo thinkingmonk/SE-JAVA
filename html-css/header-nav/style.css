@@ -1,0 +1,195 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg: #f7f5f2;
+    --ink: #121417;
+    --muted: #5c6570;
+    --line: rgba(18, 20, 23, 0.1);
+    --brand: #0f766e;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+#nav-toggle { display: none; }
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 28px;
+    height: 64px;
+    background: rgba(247, 245, 242, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.nav > nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav > nav > a,
+.has-drop > a {
+    position: relative;
+    padding: 10px 14px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Hover underline grows from the center */
+.nav > nav > a::after,
+.has-drop > a::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 6px;
+    height: 2px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.nav > nav > a:hover::after,
+.has-drop:hover > a::after,
+.nav > nav > a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.nav .cta {
+    margin-left: 8px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 16px;
+}
+
+.nav .cta::after { display: none; }
+.nav .cta:hover { background: var(--brand); }
+
+.has-drop { position: relative; }
+
+.drop {
+    position: absolute;
+    top: calc(100% - 4px);
+    left: 0;
+    min-width: 240px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(18, 20, 23, 0.12);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: 0.18s ease;
+}
+
+.has-drop:hover .drop,
+.has-drop:focus-within .drop {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.drop a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.drop a:hover { background: #eef8f6; }
+.drop span { display: block; color: var(--muted); font-size: 0.82rem; font-weight: 400; }
+
+.burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+}
+
+main { width: min(880px, 90%); margin: 0 auto; padding: 40px 0 80px; }
+.crumb a { color: var(--brand); text-decoration: none; }
+.kicker { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.72rem; color: var(--muted); }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.04em; margin: 8px 0; }
+.lede { color: var(--muted); max-width: 48ch; font-size: 1.1rem; }
+
+.blocks { display: flex; gap: 14px; margin-top: 36px; }
+.blocks article {
+    flex: 1;
+    padding: 18px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+}
+
+.tall {
+    margin-top: 28px;
+    min-height: 40vh;
+    padding: 28px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+}
+
+@media (max-width: 760px) {
+    .burger { display: grid; }
+
+    .nav > nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+    }
+
+    #nav-toggle:checked ~ .nav > nav { display: flex; }
+
+    .drop {
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        padding: 0 0 0 12px;
+    }
+
+    .blocks { flex-direction: column; }
+}

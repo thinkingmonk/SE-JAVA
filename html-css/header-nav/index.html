@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northline — header nav hover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle">
+
+    <header class="nav">
+        <a class="logo" href="#">Northline</a>
+
+        <label class="burger" for="nav-toggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </label>
+
+        <nav>
+            <a href="#home">Home</a>
+
+            <div class="has-drop">
+                <a href="#academics">Academics</a>
+                <div class="drop">
+                    <a href="#se">
+                        <strong>Software Engg</strong>
+                        <span>OOP, web, DBMS</span>
+                    </a>
+                    <a href="#ds">
+                        <strong>Data Science</strong>
+                        <span>Python, stats, ML</span>
+                    </a>
+                    <a href="#design">
+                        <strong>UI studio</strong>
+                        <span>HTML, CSS, Figma</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="#fest">Fest</a>
+            <a href="#clubs">Clubs</a>
+            <a class="cta" href="#apply">Apply</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="crumb"><a href="../index.html">← Labs</a></p>
+        <p class="kicker">Hover the links · open Academics</p>
+        <h1>A header that feels like a real product.</h1>
+        <p class="lede">
+            Animated underline on hover, a dropdown panel, frosted sticky bar,
+            and a checkbox hamburger on small screens — still zero JavaScript.
+        </p>
+        <section class="blocks" id="home">
+            <article><h2>Library</h2><p>Open till midnight during midsems.</p></article>
+            <article><h2>Labs</h2><p>Book GPU boxes from the portal.</p></article>
+            <article><h2>Canteen</h2><p>New night menu after 8pm.</p></article>
+        </section>
+        <section class="tall" id="academics"><h2>Academics</h2><p>Scroll to see the sticky header stay put.</p></section>
+        <section class="tall" id="fest"><h2>Fest</h2></section>
+        <section class="tall" id="clubs"><h2>Clubs</h2></section>
+        <section class="tall" id="apply"><h2>Apply</h2></section>
+    </main>
+</body>
+</html>
