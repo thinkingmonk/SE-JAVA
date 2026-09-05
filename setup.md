@@ -7,7 +7,8 @@ where javac
 
 2 - Install IntelliJ IDEA https://www.jetbrains.com/idea/download/?section=windows
 
-3 - GitHub Repository: https://github.com/thinkingmonk/SE-JAVA/tree/master
+3 - GitHub Repository: https://github.com/thinkingmonk/SE-JAVA/tree/master  
+   Git crash course: [git-github.md](./git-github.md)
 
 Ref: https://www.youtube.com/watch?v=UmnCZ7-9yDY
 
