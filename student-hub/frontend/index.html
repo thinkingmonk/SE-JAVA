@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCET Student Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner container">
+            <div>
+                <p class="kicker">Full-stack mini project</p>
+                <h1>TCET Student Hub</h1>
+                <p class="tagline">Announcements from your class — static site + Java API</p>
+            </div>
+            <div class="header__actions">
+                <span id="apiStatus" class="status status--offline" role="status">Offline mode</span>
+                <button type="button" id="themeBtn" class="btn btn--ghost" aria-label="Toggle theme">Theme</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container layout">
+        <section class="card" aria-labelledby="form-title">
+            <p class="card__eyebrow">Post an announcement</p>
+            <h2 id="form-title" class="card__title">New announcement</h2>
+
+            <form id="announcementForm" class="announcement-form">
+                <div class="field">
+                    <label for="author">Your name</label>
+                    <input id="author" name="author" type="text" placeholder="e.g. Riya Sharma" required maxlength="40">
+                </div>
+
+                <div class="field">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text" placeholder="e.g. Lab submission deadline" required maxlength="80">
+                </div>
+
+                <div class="field">
+                    <label for="body">Message</label>
+                    <textarea id="body" name="body" rows="4" placeholder="Write the full announcement…" required maxlength="500"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary" id="submitBtn">Publish</button>
+            </form>
+        </section>
+
+        <section class="feed" aria-labelledby="feed-title">
+            <div class="feed__header">
+                <h2 id="feed-title">Announcements</h2>
+                <p id="feedStats" class="feed__stats">Loading…</p>
+            </div>
+
+            <ul id="announcementList" class="announcement-list" aria-live="polite"></ul>
+            <p id="emptyMsg" class="empty-msg">No announcements yet — post one on the left.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p>Frontend: HTML · CSS · JavaScript &nbsp;|&nbsp; Backend: Java HttpServer</p>
+            <p class="footer__hint">Run the Java server, then refresh — status turns green when connected.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
